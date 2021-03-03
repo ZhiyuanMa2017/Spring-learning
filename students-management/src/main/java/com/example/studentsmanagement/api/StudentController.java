@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -30,6 +31,26 @@ public class StudentController {
     public List<Student> getAllStudents() {
         return studentService.getALLStudents();
     }
+
+    @GetMapping("/name")
+    // localhost:8080/api/student/name?name=
+    public List<Student> getStudents(@RequestParam String name) {
+        return studentService.getStudentsByName(name);
+    }
+
+
+    @GetMapping("/contain_name")
+    // localhost:8080/api/student/contain_name?name=
+    public List<Student> getStudentsContainName(@RequestParam String name) {
+        return studentService.getStudentsContainName(name);
+    }
+
+    @GetMapping("/class")
+    // localhost:8080/api/student/class?year= & number=
+    public List<Student> getStudentsInCLass(@RequestParam int year, @RequestParam int number) {
+        return studentService.getStudentsInClass(year, number);
+    }
+
 
     @RequestMapping("/register")
     @PostMapping

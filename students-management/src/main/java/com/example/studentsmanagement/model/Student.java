@@ -21,7 +21,7 @@ public class Student {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "univeristy_class_id")
+    @JoinColumn(name = "university_class_id")
     private UniversityClass universityClass;
 
 
