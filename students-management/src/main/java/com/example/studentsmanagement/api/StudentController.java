@@ -5,6 +5,7 @@ import com.example.studentsmanagement.exceptions.StudentEmptyNameException;
 import com.example.studentsmanagement.exceptions.StudentNonExistException;
 import com.example.studentsmanagement.model.Student;
 import com.example.studentsmanagement.service.StudentService;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -28,6 +29,7 @@ public class StudentController {
     }
 
     @GetMapping
+    @RequiresPermissions("student:read")
     public List<Student> getAllStudents() {
         return studentService.getALLStudents();
     }
