@@ -1,6 +1,5 @@
-package com.squirrel.hello;
+package com.squirrel.hello.web;
 
-import com.squirrel.hello.web.HelloController;
 import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,7 +9,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.*;
 
 @SpringBootTest
 public class HelloTest {
@@ -28,6 +26,4 @@ public class HelloTest {
                 .accept(MediaType.APPLICATION_JSON_UTF8))/*.andDo(print())*/
                 .andExpect(MockMvcResultMatchers.content().string(Matchers.containsString("小明")));
     }
-
-
 }
