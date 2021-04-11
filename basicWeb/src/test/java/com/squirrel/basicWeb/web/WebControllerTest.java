@@ -1,4 +1,4 @@
-package com.squirrel.basicWeb.Web;
+package com.squirrel.basicWeb.web;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -32,5 +32,14 @@ public class WebControllerTest {
                 .accept(MediaType.APPLICATION_JSON_UTF8))
                 .andReturn().getResponse().getContentAsString();
         System.out.println("result:" + reponseString);
+    }
+
+    @Test
+    public void saveUsers() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.post("/saveUser")
+                .param("name", "")
+                .param("age", "666")
+                .param("pass", "test")
+        );
     }
 }
