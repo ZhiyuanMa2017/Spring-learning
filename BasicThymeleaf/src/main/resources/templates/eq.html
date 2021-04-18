@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>EQ</title>
+</head>
+<body>
+<div>
+    <h1>EQ</h1>
+    <input th:value="${name}"/>
+    <br/>
+    <input th:value="${age gt 30 ? 'middle age':'young age'}"/>
+    <br/>
+    <a th:if="${flag eq 'yes'}" th:href="@{https://www.google.com}"> Google </a>
+</div>
+
+</body>
+</html>
