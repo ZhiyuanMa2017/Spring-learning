@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<div>
+    <h1>for loop</h1>
+    <table>
+        <tr th:each="user, iterStat: ${users}">
+            <td th:text="${user.name}">squirrel</td>
+            <td th:text="${user.age}">14</td>
+            <td th:text="${user.password}">0987</td>
+            <td th:text="${iterStat.index}">index</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

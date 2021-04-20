@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Object</title>
+</head>
+<body>
+<div>
+    <h1>基本对象</h1>
+    <p th:text="${#request.getAttribute('request')}">
+        <br/>
+    <p th:text="${session.session}"></p>
+    <br/>
+
+    Established locale country:<span th:text="${#locale.country}">SIN</span>
+
+    <!--If the browser's language is "en", locale.country will be "" which is an empty string!!! -->
+
+    <h3>#locale.language</h3>
+    <span th:utext="${#locale.language}"></span>
+
+    <h3>#locale.country</h3>
+    <br/>
+    displayCountry: <span th:utext="${#locale.displayCountry}"></span>
+    <br/>
+    displayLanguage: <span th:utext="${#locale.displayLanguage}"></span>
+    <br/>
+    displayName: <span th:utext="${#locale.displayName}"></span>
+    <br/>
+    displayScript: <span th:utext="${#locale.displayScript}"></span>
+    <br/>
+    displayVariant: <span th:utext="${#locale.displayVariant}"></span>
+    <br/>
+    default: <span th:utext="${#locale.default}"></span>
+    <br/>
+    ISO3Country: <span th:utext="${#locale.ISO3Country}"></span>
+
+</div>
+</body>
+</html>

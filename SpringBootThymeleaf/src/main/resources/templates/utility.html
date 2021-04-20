@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Utility</title>
+</head>
+<body>
+<h1>内嵌变量</h1>
+<!-- 格式化时间 -->
+<p th:text="${#dates.format(date, 'yyyy-MM-dd HH:mm:ss')}"> squirrel </p>
+<!-- Today -->
+<p th:text="${#dates.createToday()}"> squirrel </p>
+<!-- Now -->
+<p th:text="${#dates.createNow()}"> squirrel </p>
+
+<!-- String isEmpty -->
+<p th:text="'StringEmpty?: '+ ${#strings.isEmpty(userName)}"> StringEmpty? </p>
+<!-- List isEmpty -->
+<p th:text="'ListEmpty?: '+ ${#strings.listIsEmpty(users)}"> ListEmpty? </p>
+<!-- String length -->
+<p th:text="'String length: ' + ${#strings.length(userName)}"> String length </p>
+<!-- String concat -->
+<p th:text="'String concat: '+ ${#strings.concat(userName,', ', userName,', ', 'abc')}"> String concat </p>
+<!-- String random construct -->
+<p th:text="'String random construct: ' + ${#strings.randomAlphanumeric(count)}"> String random construct </p>
+</body>
+</html>
