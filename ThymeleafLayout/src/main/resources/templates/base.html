@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="common_header(title, links)">
+    <title th:replace="${title}">comm title</title>
+
+    <link media="all" rel="stylesheet" th:href="@{/css/myapp.css}" type="text/css">
+    <link rel="shortcut icon" th:href="@{/images/favicon.ico}">
+    <script th:src="@{/js/myapp.js}" type="text/javascript"></script>
+
+    <!--/* Per-page placeholder for additional links */-->
+    <th:block th:replace="${links}"/>
+
+</head>
+<body>
+
+</body>
+</html>
