@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.squirrel.mybatisxml.mapper.one.User1Mapper">
+	<resultMap id="BaseResultMap" type="com.squirrel.mybatisxml.model.MyUser">
+		<id column="id" property="id" jdbcType="BIGINT"/>
+		<result column="userName" property="userName" jdbcType="VARCHAR"/>
+		<result column="passWord" property="passWord" jdbcType="VARCHAR"/>
+		<result column="user_sex" property="userSex" javaType="com.squirrel.mybatisxml.enums.UserSexEnum"/>
+		<result column="nick_name" property="nickName" jdbcType="VARCHAR"/>
+	</resultMap>
+
+	<sql id="Base_Where_List">
+		<if test="userName != null and userName != ''">
+			and userName = #{userName}
+		</if>
+		<if test="userSex != null and userSex != ''">
+			and userSex = #{userSex}
+		</if>
+	</sql>
+
+	<sql id="Base_Column_List">
+		id
+		,userName,passWord,user_sex,nick_name
+	</sql>
+
+	<select id="getAll" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List"/>
+		from users
+	</select>
+
+	<select id="getList" resultMap="BaseResultMap" parameterType="com.squirrel.mybatisxml.param.UserParam">
+		SELECT
+		<include refid="Base_Column_List"/>
+		from users
+		where 1=1
+		<include refid="Base_Where_List"/>
+		order by id desc
+		limit #{beginLine}, #{pageSize}
+	</select>
+
+	<select id="getCount" resultType="Integer" parameterType="com.squirrel.mybatisxml.param.UserParam">
+		SELECT
+		count(1)
+		from users
+		where 1=1
+		<include refid="Base_Where_List"/>
+	</select>
+
+	<select id="getOne" resultType="Long" resultMap="BaseResultMap">
+		SELECT
+		<include refid="Base_Column_List"/>
+		from users
+		where id = #{id}
+	</select>
+
+	<insert id="insert" parameterType="com.squirrel.mybatisxml.model.MyUser">
+		insert into users (userName, passWord, user_sex)
+		values (#{userName}, #{passWord}, #{userSex})
+	</insert>
+
+	<update id="update" parameterType="com.squirrel.mybatisxml.model.MyUser">
+		update users
+		set
+		<if test="userName != null">
+			userName = #{userName},
+		</if>
+		<if test="passWord != null">
+			passWord = #{passWord},
+		</if>
+		nick_name = #{nickName}
+		where id = #{id}
+	</update>
+
+	<delete id="delete" parameterType="Long">
+		delete
+		from users
+		where id = #{id}
+	</delete>
+
+</mapper>
