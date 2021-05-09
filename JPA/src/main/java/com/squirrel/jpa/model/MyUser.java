@@ -4,8 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "Myuser.findByPassWord",
+                query = "select u from MyUser u where u.passWord = ?1"),
+        @NamedQuery(name = "Myuser.findByNickName",
+                query = "select u from MyUser u where u.nickName = ?1")})
 public class MyUser {
 
     @Id
