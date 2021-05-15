@@ -1,0 +1,28 @@
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-10003, pstmt-20000} created. select myuser0_.id as id1_0_, myuser0_.email as email2_0_, myuser0_.nick_name as nick_nam3_0_, myuser0_.pass_word as pass_wor4_0_, myuser0_.reg_time as reg_time5_0_, myuser0_.user_name as user_nam6_0_ from my_user myuser0_
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-10003, pstmt-20000} Parameters : []
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-10003, pstmt-20000} Types : []
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-10003, pstmt-20000, rs-50000} query executed. 6.27871 millis. select myuser0_.id as id1_0_, myuser0_.email as email2_0_, myuser0_.nick_name as nick_nam3_0_, myuser0_.pass_word as pass_wor4_0_, myuser0_.reg_time as reg_time5_0_, myuser0_.user_name as user_nam6_0_ from my_user myuser0_
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-10003, pstmt-20000} clearParameters. 
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-110006, pstmt-120000} created. select myuser0_.id as id1_0_, myuser0_.email as email2_0_, myuser0_.nick_name as nick_nam3_0_, myuser0_.pass_word as pass_wor4_0_, myuser0_.reg_time as reg_time5_0_, myuser0_.user_name as user_nam6_0_ from my_user myuser0_
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-110006, pstmt-120000} Parameters : []
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-110006, pstmt-120000} Types : []
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-110006, pstmt-120000, rs-150000} query executed. 1.584157 millis. select myuser0_.id as id1_0_, myuser0_.email as email2_0_, myuser0_.nick_name as nick_nam3_0_, myuser0_.pass_word as pass_wor4_0_, myuser0_.reg_time as reg_time5_0_, myuser0_.user_name as user_nam6_0_ from my_user myuser0_
+[2021-05-16 04:45:22] DEBUG 137 statementLog - {conn-110006, pstmt-120000} clearParameters. 
+[2021-05-16 04:46:13] DEBUG 137 statementLog - {conn-10003, pstmt-20000} Parameters : []
+[2021-05-16 04:46:13] DEBUG 137 statementLog - {conn-10003, pstmt-20000} Types : []
+[2021-05-16 04:46:13] DEBUG 137 statementLog - {conn-10003, pstmt-20000, rs-50001} query executed. 2.487228 millis. select myuser0_.id as id1_0_, myuser0_.email as email2_0_, myuser0_.nick_name as nick_nam3_0_, myuser0_.pass_word as pass_wor4_0_, myuser0_.reg_time as reg_time5_0_, myuser0_.user_name as user_nam6_0_ from my_user myuser0_
+[2021-05-16 04:46:13] DEBUG 137 statementLog - {conn-10003, pstmt-20000} clearParameters. 
+[2021-05-16 04:46:13] DEBUG 137 statementLog - {conn-110006, pstmt-120000} Parameters : []
+[2021-05-16 04:46:13] DEBUG 137 statementLog - {conn-110006, pstmt-120000} Types : []
+[2021-05-16 04:46:13] DEBUG 137 statementLog - {conn-110006, pstmt-120000, rs-150001} query executed. 1.228394 millis. select myuser0_.id as id1_0_, myuser0_.email as email2_0_, myuser0_.nick_name as nick_nam3_0_, myuser0_.pass_word as pass_wor4_0_, myuser0_.reg_time as reg_time5_0_, myuser0_.user_name as user_nam6_0_ from my_user myuser0_
+[2021-05-16 04:46:13] DEBUG 137 statementLog - {conn-110006, pstmt-120000} clearParameters. 
+[2021-05-16 04:46:16] DEBUG 137 statementLog - {conn-10003, pstmt-20000} Parameters : []
+[2021-05-16 04:46:16] DEBUG 137 statementLog - {conn-10003, pstmt-20000} Types : []
+[2021-05-16 04:46:16] DEBUG 137 statementLog - {conn-10003, pstmt-20000, rs-50002} query executed. 2.662269 millis. select myuser0_.id as id1_0_, myuser0_.email as email2_0_, myuser0_.nick_name as nick_nam3_0_, myuser0_.pass_word as pass_wor4_0_, myuser0_.reg_time as reg_time5_0_, myuser0_.user_name as user_nam6_0_ from my_user myuser0_
+[2021-05-16 04:46:16] DEBUG 137 statementLog - {conn-10003, pstmt-20000} clearParameters. 
+[2021-05-16 04:46:16] DEBUG 137 statementLog - {conn-110006, pstmt-120000} Parameters : []
+[2021-05-16 04:46:16] DEBUG 137 statementLog - {conn-110006, pstmt-120000} Types : []
+[2021-05-16 04:46:16] DEBUG 137 statementLog - {conn-110006, pstmt-120000, rs-150002} query executed. 1.133956 millis. select myuser0_.id as id1_0_, myuser0_.email as email2_0_, myuser0_.nick_name as nick_nam3_0_, myuser0_.pass_word as pass_wor4_0_, myuser0_.reg_time as reg_time5_0_, myuser0_.user_name as user_nam6_0_ from my_user myuser0_
+[2021-05-16 04:46:16] DEBUG 137 statementLog - {conn-110006, pstmt-120000} clearParameters. 
+[2021-05-16 04:46:54] DEBUG 137 statementLog - {conn-110006, pstmt-120000} closed
+[2021-05-16 04:46:54] DEBUG 137 statementLog - {conn-10003, pstmt-20000} closed
