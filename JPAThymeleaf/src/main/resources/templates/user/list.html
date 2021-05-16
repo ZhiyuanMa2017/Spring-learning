@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Users List</title>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+          integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" rel="stylesheet">
+</head>
+<body class="container">
+<br/>
+<h1>Users List</h1>
+<br/><br/>
+<div class="with:80%">
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>User Name</th>
+            <th>Password</th>
+            <th>Age</th>
+            <th>Reg Time</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="myUser:${users}">
+            <th scope="row" th:text="${myUser.id}">1</th>
+            <td th:text="${myUser.userName}">squirrel</td>
+            <td th:text="${myUser.passWord}">abc12345</td>
+            <td th:text="${myUser.age}">12</td>
+            <td th:text="${#dates.format(myUser.regTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td><a th:href="@{/toEdit(id=${myUser.id})}">edit</a></td>
+            <td><a onclick="return confirm('Sure to delete this myUser?')" th:href="@{/delete(id=${myUser.id})}">delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="form-group">
+    <div class="col-sm-2 control-label">
+        <a class="btn btn-info" href="/toAdd" th:href="@{/toAdd}">add</a>
+    </div>
+</div>
+</body>
+</html>
