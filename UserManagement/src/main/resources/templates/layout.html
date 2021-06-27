@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title th:replace="${title}">comm title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link rel="stylesheet" th:href="@{/css/main.css}">
+
+</head>
+<body>
+<div class="container">
+    <th:block th:replace="${content}"/>
+    <th:block th:insert="layout/footer :: footer"></th:block>
+</div>
+
+</body>
+</html>

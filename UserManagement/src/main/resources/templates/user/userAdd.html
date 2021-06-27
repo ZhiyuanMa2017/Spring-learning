@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="layout :: common_layout(~{::title},~{::content})" xmlns:th="http://www/thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+</head>
+<body>
+<content>
+    <div>
+        <br/>
+        <h1>Add User</h1>
+        <br/><br/>
+        <div class="with:80%">
+            <form class="form-horizontal" method="post" th:action="@{/add}">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="userName">userName</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="userName" name="userName" placeholder="enter userName"
+                               type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="email">email</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="email" name="email" placeholder="enter email" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="passWord">Password</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="passWord" name="password" placeholder="enter password"
+                               type="password"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" for="age">age</label>
+                    <div class="col-sm-10">
+                        <input class="form-control" id="age" name="age" placeholder="age" type="text"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <div class="alert alert-danger" role="alert" th:if="${errorMsg != null}"
+                             th:text="${errorMsg}"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input class="btn btn-info" type="submit" value="Submit"/>
+                        &nbsp;&nbsp;&nbsp;
+                        <input class="btn btn-info" type="reset" value="Reset"/>
+                        &nbsp;&nbsp;&nbsp;
+                        <a class="btn btn-info" href="/toAdd" th:href="@{/list}">Back</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</content>
+</body>
+</html>
