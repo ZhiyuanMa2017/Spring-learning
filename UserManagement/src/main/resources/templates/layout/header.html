@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www/thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>header</title>
@@ -8,8 +8,8 @@
 <header th:fragment="header">
     <div style="float: right;margin-top: 30px">
         <div style="font-size: large">Welcome Sign In,
-            <text th:text="{${session.LOGIN_SESSION_USER.getUserName()}"></text>
-            ! <a href="/loginOut" style="font-size: small" th:href="@{/logOut)">Exit</a>
+            <text th:text="${session.LOGIN_SESSION_USER.getUserName()}"></text>
+            ! <a href="/loginOut" style="font-size: small" th:href="@{/loginOut}">Exit</a>
         </div>
         <div style="color: red" th:if="${session.LOGIN_SESSION_USER.getState()=='unverified'}">Please verify your
             email!

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www/thymeleaf.org">
+<html lang="en" th:replace="layout :: common_layout(~{::title},~{::content})" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>User List</title>
 </head>
 <body>
 <content>
-    <th:block th:if="${user != null}" th:replace="layout/header :: header"></th:block>
+    <th:block th:if="${users != null}" th:replace="layout/header :: header"></th:block>
     <div>
         <br/>
         <h1>User List</h1>
@@ -30,7 +30,7 @@
                     <td th:text="${user.email}">abc@gmail.com</td>
                     <td th:text="${user.userType}">User</td>
                     <td th:text="${user.age}">67</td>
-                    <td th:text="${#dates.format(user.regTime, 'yyyy-MM-dd HH:mm:ss'}"></td>
+                    <td th:text="${#dates.format(user.regTime, 'yyyy-MM-dd HH:mm:ss')}"></td>
                     <td><a th:href="@{/toEdit(id=${user.id})}" th:if="${user.userType !='manage'}">edit</a></td>
                     <td><a onclick="return confirm('Sure to delete this user?')" th:href="@{/delete(id=${user.id})}"
                            th:if="${user.userType!='manage'}">delete</a></td>
