@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -32,6 +33,7 @@ public class UserController {
     private UserRepository userRepository;
 
     @RequestMapping("list")
+    @Cacheable(value = "user_list")
     public String list(Model model,
                        @RequestParam(value = "page", defaultValue = "0") Integer page,
                        @RequestParam(value = "size", defaultValue = "6") Integer size) {
@@ -58,7 +60,8 @@ public class UserController {
             model.addAttribute("errorMsg", errMsg);
             return "user/userAdd";
         }
-        User user = userRepository.findByUserNameOrEmail(userParam.getUserName(), userParam.getEmail());
+        User user = userRepository.findByUserNameOrEmail(
+                userParam.getUserName(), userParam.getEmail());
         if (user != null) {
             model.addAttribute("errorMsg", "User already exists");
             return "user/userAdd";

@@ -60,7 +60,8 @@ public class IndexController {
     }
 
     @RequestMapping("/login")
-    public String login(@Valid LoginParam loginParam, BindingResult result, ModelMap model, HttpServletRequest request) {
+    public String login(@Valid LoginParam loginParam, BindingResult result,
+                        ModelMap model, HttpServletRequest request) {
         String errorMsg = "";
         if (result.hasErrors()) {
             List<ObjectError> list = result.getAllErrors();
@@ -99,7 +100,8 @@ public class IndexController {
     }
 
     @RequestMapping("register")
-    public String register(@Valid RegisterParam registerParam, BindingResult result, ModelMap model) {
+    public String register(@Valid RegisterParam registerParam,
+                           BindingResult result, ModelMap model) {
         LOGGER.info("register param" + registerParam.toString());
         String errorMsg = "";
         if (result.hasErrors()) {
@@ -110,7 +112,8 @@ public class IndexController {
             model.addAttribute("errorMsg", errorMsg);
             return "register";
         }
-        User u = userRepository.findByUserNameOrEmail(registerParam.getUserName(), registerParam.getEmail());
+        User u = userRepository.findByUserNameOrEmail(
+                registerParam.getUserName(), registerParam.getEmail());
         if (u != null) {
             model.addAttribute("errorMsg", "User exists");
             return "register";
@@ -138,8 +141,8 @@ public class IndexController {
             helper.setSubject("Registration verify email");
             helper.setText(emailContent, true);
             mailSender.send(message);
-        } catch (Exception e) {
-            LOGGER.error("Email error", e);
+        } catch (MessagingException e) {
+            LOGGER.error("Registration Email error", e);
         }
     }
 
