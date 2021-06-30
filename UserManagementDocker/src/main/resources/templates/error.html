@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>500</title>
+    <link rel="stylesheet" th:href="@{css/bootstrap.css}">
+</head>
+<body class="container">
+<h1>Server Error</h1>
+Request Address: <span th:text="${url}"></span><br/>
+Error Message: <span th:text="${exception}"></span>
+
+</body>
+</html>

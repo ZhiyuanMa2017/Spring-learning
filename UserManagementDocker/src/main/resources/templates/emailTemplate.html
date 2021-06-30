@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www/thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Template</title>
+</head>
+<body>
+Thank you for your registration, please verify asap.<br/>
+<a href="#" th:href="@{http:..localhost:8080/verified/{id}(id=${id})}">Activate the account</a>
+</body>
+</html>
